@@ -14,37 +14,37 @@ function StudentsList() {
   {id:5, name:"Nami", email:"nami@email.com", yos:"IV", course:"IT"},
 ]);
 
-// useEffect( () =>{loadStudents()},[]);
+useEffect( () =>{loadStudents()},[]);
 
-// const loadStudents = async() => {
-//     try {
-//         const res = await getStudents();
-//         if (Array.isArray(res.data)) {
-//             setStudents(res.data);
-//         } else {
-//             console.error("API response is not an array:", res.data);
-//             setStudents([]);
-//         }
-//     } catch (error) {
-//         console.error("Error loading students:", error);
-//         setStudents([]);
-//     }
-// }
+const loadStudents = async() => {
+    try {
+        const res = await getStudents();
+        if (Array.isArray(res.data)) {
+            setStudents(res.data);
+        } else {
+            console.error("API response is not an array:", res.data);
+            setStudents([]);
+        }
+    } catch (error) {
+        console.error("Error loading students:", error);
+        setStudents([]);
+    }
+}
 
-// const handleDelete = async (id) => {
-//     const res = await deleteStudents();
-//     loadStudents();
-// }
+const handleDelete = async (id) => {
+    const res = await deleteStudents();
+    loadStudents();
+}
 
-// const handleUpdate = async (id,student) =>{
-//     const res = await updateStudents(id,student);
-//     loadStudents();
-// }
+const handleUpdate = async (id,student) =>{
+    const res = await updateStudents(id,student);
+    loadStudents();
+}
 
-// const onAddStudent = async(student) => {
-//     const res = await addStudents(student);
-//     loadStudents();
-// }
+const onAddStudent = async(student) => {
+    const res = await addStudents(student);
+    loadStudents();
+}
 
   return (
     <>
