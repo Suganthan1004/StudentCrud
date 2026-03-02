@@ -2,8 +2,8 @@ import React from 'react'
 
 function Header() {
   return (
-    <h1>Header</h1>
-  )
+    <header>Student Management System</header>
+  );
 }
 
 export default Header

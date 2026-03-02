@@ -1,9 +1,20 @@
-import React from 'react'
+const onAddStudent = () => {
 
-function Navbar() {
+}
+
+const data = ""
+
+function NavBar() {
   return (
-    <div>Navbar</div>
+    <nav>
+      <button onClick={onAddStudent}>Add Student</button>
+      <input placeholder="Filter by options"/>
+      <select>
+        <option>Filter by Dept</option>
+        <option>Filter by Year</option>
+      </select>
+    </nav>
   )
 }
 
-export default Navbar
+export default NavBar

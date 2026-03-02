@@ -1,10 +1,10 @@
-import Header from "./components/Header"
+import StudentsList from "./pages/StudentsList"
 
 function App() {
 
   return (
     <>
-    <Header/>
+    <StudentsList/>
     </>
   )
 }
