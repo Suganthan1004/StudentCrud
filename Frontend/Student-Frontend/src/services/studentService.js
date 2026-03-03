@@ -7,11 +7,11 @@ const USE_MOCK_DATA = true;
 
 // Mock database
 let mockStudents = [
-    { id: 1, name: "Alice Johnson", mail: "alice@example.com", dept: "CS", yearOfPassing: 2024, course: "B.Tech" },
-    { id: 2, name: "Bob Smith", mail: "bob@example.com", dept: "Math", yearOfPassing: 2025, course: "B.Sc" },
-    { id: 3, name: "Charlie Brown", mail: "charlie@example.com", dept: "Physics", yearOfPassing: 2023, course: "B.Sc" },
-    { id: 4, name: "Diana Prince", mail: "diana@example.com", dept: "Mech", yearOfPassing: 2026, course: "B.Tech" },
-    { id: 5, name: "Ethan Hunt", mail: "ethan@example.com", dept: "Business", yearOfPassing: 2024, course: "BBA" },
+    { id: 1, name: "Luffy", mail: "luffy@example.com", dept: "CS", yearOfPassing: 2024, course: "B.Tech" },
+    { id: 2, name: "Zoro", mail: "zoro@example.com", dept: "Math", yearOfPassing: 2025, course: "B.Sc" },
+    { id: 3, name: "Sanji", mail: "sanji@example.com", dept: "Physics", yearOfPassing: 2023, course: "B.Sc" },
+    { id: 4, name: "Nami", mail: "nami@example.com", dept: "Mech", yearOfPassing: 2026, course: "B.Tech" },
+    { id: 5, name: "Usopp", mail: "usopp@example.com", dept: "Business", yearOfPassing: 2024, course: "BBA" },
 ];
 
 let nextId = 6;
