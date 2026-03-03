@@ -13,7 +13,6 @@ function StudentTable({ students, onEdit, onDelete }) {
             <th>Mail</th>
             <th>Dept</th>
             <th>YoP</th>
-            <th>Course</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -25,7 +24,6 @@ function StudentTable({ students, onEdit, onDelete }) {
               <td>{s.mail}</td>
               <td>{s.dept}</td>
               <td>{s.yearOfPassing}</td>
-              <td>{s.course}</td>
               <td className="actions-cell">
                 <button
                   className="btn btn-sm btn-info"

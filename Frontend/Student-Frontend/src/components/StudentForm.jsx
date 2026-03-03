@@ -2,25 +2,31 @@ import { useState, useEffect } from "react";
 
 function StudentForm({ student, onSubmit, onCancel }) {
   const [formData, setFormData] = useState({
+    studentId: "",
     name: "",
     mail: "",
     dept: "",
     yearOfPassing: "",
-    course: "",
   });
 
   // Prepopulate form if editing
   useEffect(() => {
     if (student) {
       setFormData({
+        studentId: student.studentId || student.id || "",
         name: student.name || "",
         mail: student.mail || "",
         dept: student.dept || "",
         yearOfPassing: student.yearOfPassing || "",
-        course: student.course || "",
       });
     } else {
-      setFormData({ name: "", mail: "", dept: "", yearOfPassing: "", course: "" });
+      setFormData({
+        studentId: "",
+        name: "",
+        mail: "",
+        dept: "",
+        yearOfPassing: "",
+      });
     }
   }, [student]);
 
@@ -42,6 +48,19 @@ function StudentForm({ student, onSubmit, onCancel }) {
       <div className="modal-content">
         <h2>{student ? "Update Student" : "Add New Student"}</h2>
         <form onSubmit={handleSubmit} className="student-form">
+          <div className="form-group">
+            <label htmlFor="studentId">Student ID</label>
+            <input
+              type="number"
+              id="studentId"
+              name="studentId"
+              value={formData.studentId}
+              onChange={handleChange}
+              required
+              min="1"
+              readOnly={Boolean(student)}
+            />
+          </div>
           <div className="form-group">
             <label htmlFor="name">Name</label>
             <input
@@ -88,19 +107,12 @@ function StudentForm({ student, onSubmit, onCancel }) {
               max="2100"
             />
           </div>
-          <div className="form-group">
-            <label htmlFor="course">Course</label>
-            <input
-              type="text"
-              id="course"
-              name="course"
-              value={formData.course}
-              onChange={handleChange}
-              required
-            />
-          </div>
           <div className="form-actions">
-            <button type="button" className="btn btn-secondary" onClick={onCancel}>
+            <button
+              type="button"
+              className="btn btn-secondary"
+              onClick={onCancel}
+            >
               Cancel
             </button>
             <button type="submit" className="btn btn-primary">
