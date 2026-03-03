@@ -1,9 +1,9 @@
-import React from 'react'
-
 function Header() {
   return (
-    <header>Student Management System</header>
+    <header className="app-header">
+      <h1>Student Management System</h1>
+    </header>
   );
 }
 
-export default Header
+export default Header;

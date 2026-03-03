@@ -1,20 +1,34 @@
-const onAddStudent = () => {
+import { IoMdAdd } from "react-icons/io";
 
-}
 
-const data = ""
-
-function NavBar() {
+function Navbar({ searchTerm, onSearchChange, sortOption, onSortChange, onAddClick }) {
   return (
-    <nav>
-      <button onClick={onAddStudent}>Add Student</button>
-      <input placeholder="Filter by options"/>
-      <select>
-        <option>Filter by Dept</option>
-        <option>Filter by Year</option>
-      </select>
+    <nav className="app-navbar">
+      <div className="navbar-actions">
+        <button className="btn btn-primary" onClick={onAddClick}>
+           <IoMdAdd /> Add Student
+        </button>
+      </div>
+      <div className="navbar-controls">
+        <input
+          type="text"
+          placeholder="Filter by name..."
+          value={searchTerm}
+          onChange={(e) => onSearchChange(e.target.value)}
+          className="search-input"
+        />
+        <select
+          value={sortOption}
+          onChange={(e) => onSortChange(e.target.value)}
+          className="sort-select"
+        >
+          <option value="">Sort By</option>
+          <option value="name">Name</option>
+          <option value="yearOfPassing">Year of Passing</option>
+        </select>
+      </div>
     </nav>
-  )
+  );
 }
 
-export default NavBar
+export default Navbar;
